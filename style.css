@@ -1,0 +1,702 @@
+:root {
+    --bg-color: #ffffff;             /* pure white background */
+    --text-color: #1a1a1a;          /* main text */
+    --secondary-color: #666666;      /* secondary text */
+    --header-bg: linear-gradient(135deg, #f7a399, #ffd1c1); /* soft pastel header */
+    --nav-bg: #f7a399;               /* nav background */
+    --nav-color: #ffffff;            /* nav text */
+    --nav-hover: #e0928b;            /* Slightly darker pink for hover */
+    --card-bg: #fafafa;              /* card/popup background */
+    --table-header-bg: linear-gradient(135deg, #f7a399, #ffd1c1); /* table header */
+    --table-border: #f7a399;         /* table border */
+    --funfact-bg: #fff2f0;           /* fun fact highlight */
+    --btn-bg: #f7a399;               /* button background */
+    --btn-hover: #e0928b;            /* button hover - slightly darker */
+    --footer-bg: #e0e0e0;            /* footer background */
+    --hover-shadow: 0 8px 20px rgba(247, 163, 153, 0.4); /* Pink shadow for hover */
+    --box-shadow-initial: 0 5px 15px rgba(0, 0, 0, 0.08); /* Soft initial shadow */
+    --pop-pug-text: white;
+    --btn-bg: #f7a399;
+    
+}
+
+
+[data-theme="dark"] {
+    --bg-color: #161f3a;             /* dark navy background */
+    --text-color: #e6eaf3;           /* lighter text for readability */
+    --secondary-color: #b0b8cc;      /* softer secondary text */
+    --header-bg: linear-gradient(135deg, #29375f, #486197); /* navy gradient header */
+    --nav-bg: #1f2a48;               /* nav background */
+    --nav-color: #e6eaf3;            /* nav text */
+    --nav-hover: #3b4f7a;            /* nav hover */
+    --card-bg: #1f2a48;              /* card/popup background */
+    --table-header-bg: linear-gradient(135deg, #3b4f7a, #5a6fa0); /* table header gradient */
+    --table-border: #3b4f7a;         /* table border */
+    --funfact-bg: #2a3a5a;           /* fun-fact highlight */
+    --btn-bg: #6e87be;               /* button background */
+    --btn-hover: #5a6fa0;            /* button hover */
+    --footer-bg: #141c30;            /* footer background */
+    --hover-shadow: 0 8px 20px rgba(110, 135, 190, 0.4); /* Blue shadow for hover */
+    --box-shadow-initial: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft initial shadow */
+    --pop-pug-text:white;
+    --btn-bg: #6e87be;
+}
+
+/* --- ANIMATIONS --- */
+/* Slide In Left */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+/* Pop In */
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+/* Shine Effect for Header/Buttons */
+@keyframes shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* --- Animated Dots --- */
+
+/* Body setup */
+/* --- Animated Dots --- */
+
+/* Body setup */
+body {
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: all 0.4s ease;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Prevents any overflow from the animated dots */
+}
+
+/* Create container for animated dots */
+.dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep them in the background */
+    pointer-events: none; /* Prevent them from blocking interaction with other content */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+/* Remove staggered delay for the dots */
+/* Add a small uniform delay (0.2s or 0.5s) for all dots */
+/* Create more dots across the background */
+.dot {
+    position: absolute;
+    width: 15px; /* Adjust size as needed */
+    height: 15px;
+    background-color: var(--dot-color);
+    border-radius: 50%;
+    animation: dotAnimation 6s infinite ease-in-out;
+    opacity: 0;
+    animation-delay: 0s; /* No delay for simultaneous pop-up */
+}
+
+/* Updated positions with more dots spread randomly */
+.dot:nth-child(1) { animation-delay: 0s; left: 5%; top: 10%; }
+.dot:nth-child(2) { animation-delay: 0s; left: 15%; top: 20%; }
+.dot:nth-child(3) { animation-delay: 0s; left: 25%; top: 5%; }
+.dot:nth-child(4) { animation-delay: 0s; left: 35%; top: 40%; }
+.dot:nth-child(5) { animation-delay: 0s; left: 45%; top: 25%; }
+.dot:nth-child(6) { animation-delay: 0s; left: 55%; top: 15%; }
+.dot:nth-child(7) { animation-delay: 0s; left: 65%; top: 60%; }
+.dot:nth-child(8) { animation-delay: 0s; left: 75%; top: 35%; }
+.dot:nth-child(9) { animation-delay: 0s; left: 85%; top: 50%; }
+.dot:nth-child(10) { animation-delay: 0s; left: 95%; top: 70%; }
+.dot:nth-child(11) { animation-delay: 0s; left: 10%; top: 80%; }
+.dot:nth-child(12) { animation-delay: 0s; left: 20%; top: 40%; }
+.dot:nth-child(13) { animation-delay: 0s; left: 30%; top: 75%; }
+.dot:nth-child(14) { animation-delay: 0s; left: 40%; top: 10%; }
+.dot:nth-child(15) { animation-delay: 0s; left: 50%; top: 55%; }
+.dot:nth-child(16) { animation-delay: 0s; left: 60%; top: 80%; }
+.dot:nth-child(17) { animation-delay: 0s; left: 70%; top: 25%; }
+.dot:nth-child(18) { animation-delay: 0s; left: 80%; top: 15%; }
+.dot:nth-child(19) { animation-delay: 0s; left: 90%; top: 30%; }
+.dot:nth-child(20) { animation-delay: 0s; left: 40%; top: 80%; }
+.dot:nth-child(21) { animation-delay: 0s; left: 55%; top: 50%; }
+.dot:nth-child(22) { animation-delay: 0s; left: 65%; top: 90%; }
+.dot:nth-child(23) { animation-delay: 0s; left: 75%; top: 45%; }
+.dot:nth-child(24) { animation-delay: 0s; left: 85%; top: 20%; }
+.dot:nth-child(25) { animation-delay: 0s; left: 25%; top: 60%; }
+.dot:nth-child(26) { animation-delay: 0s; left: 35%; top: 10%; }
+.dot:nth-child(27) { animation-delay: 0s; left: 45%; top: 70%; }
+.dot:nth-child(28) { animation-delay: 0s; left: 50%; top: 90%; }
+.dot:nth-child(29) { animation-delay: 0s; left: 60%; top: 30%; }
+.dot:nth-child(30) { animation-delay: 0s; left: 70%; top: 65%; }
+.dot:nth-child(31) { animation-delay: 0s; left: 80%; top: 25%; }
+.dot:nth-child(32) { animation-delay: 0s; left: 90%; top: 50%; }
+.dot:nth-child(33) { animation-delay: 0s; left: 5%; top: 60%; }
+.dot:nth-child(34) { animation-delay: 0s; left: 15%; top: 15%; }
+.dot:nth-child(35) { animation-delay: 0s; left: 25%; top: 35%; }
+.dot:nth-child(36) { animation-delay: 0s; left: 35%; top: 50%; }
+.dot:nth-child(37) { animation-delay: 0s; left: 45%; top: 80%; }
+.dot:nth-child(38) { animation-delay: 0s; left: 55%; top: 10%; }
+.dot:nth-child(39) { animation-delay: 0s; left: 65%; top: 45%; }
+.dot:nth-child(40) { animation-delay: 0s; left: 75%; top: 60%; }
+
+
+
+/* Animation for Dots */
+@keyframes dotAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(-50px) scale(1.5); /* Move upwards and grow */
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(0) scale(1); /* Reset */
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(50px) scale(1.5); /* Move downwards and grow */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0) scale(1); /* Reset */
+    }
+}
+
+/* Create different animation delays for each dot */
+.dot:nth-child(1) {
+    animation-delay: 0s;
+    left: 10%;
+    top: 10%;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 1s;
+    left: 20%;
+    top: 20%;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 2s;
+    left: 30%;
+    top: 30%;
+}
+
+.dot:nth-child(4) {
+    animation-delay: 3s;
+    left: 40%;
+    top: 40%;
+}
+
+.dot:nth-child(5) {
+    animation-delay: 4s;
+    left: 50%;
+    top: 50%;
+}
+
+.dot:nth-child(6) {
+    animation-delay: 5s;
+    left: 60%;
+    top: 60%;
+}
+
+.dot:nth-child(7) {
+    animation-delay: 6s;
+    left: 70%;
+    top: 70%;
+}
+
+.dot:nth-child(8) {
+    animation-delay: 7s;
+    left: 80%;
+    top: 80%;
+}
+
+.dot:nth-child(9) {
+    animation-delay: 8s;
+    left: 90%;
+    top: 90%;
+}
+
+.dot:nth-child(10) {
+    animation-delay: 9s;
+    left: 15%;
+    top: 25%;
+}
+
+.dot:nth-child(11) {
+    animation-delay: 10s;
+    left: 25%;
+    top: 10%;
+}
+
+.dot:nth-child(12) {
+    animation-delay: 11s;
+    left: 35%;
+    top: 20%;
+}
+
+.dot:nth-child(13) {
+    animation-delay: 12s;
+    left: 45%;
+    top: 30%;
+}
+
+.dot:nth-child(14) {
+    animation-delay: 13s;
+    left: 55%;
+    top: 40%;
+}
+
+.dot:nth-child(15) {
+    animation-delay: 14s;
+    left: 65%;
+    top: 50%;
+}
+
+.dot:nth-child(16) {
+    animation-delay: 15s;
+    left: 75%;
+    top: 60%;
+}
+
+.dot:nth-child(17) {
+    animation-delay: 16s;
+    left: 85%;
+    top: 70%;
+}
+
+.dot:nth-child(18) {
+    animation-delay: 17s;
+    left: 95%;
+    top: 80%;
+}
+
+.dot:nth-child(19) {
+    animation-delay: 18s;
+    left: 5%;
+    top: 90%;
+}
+
+.dot:nth-child(20) {
+    animation-delay: 19s;
+    left: 15%;
+    top: 50%;
+}
+
+.dot:nth-child(21) {
+    animation-delay: 20s;
+    left: 25%;
+    top: 70%;
+}
+
+.dot:nth-child(22) {
+    animation-delay: 21s;
+    left: 35%;
+    top: 80%;
+}
+
+.dot:nth-child(23) {
+    animation-delay: 22s;
+    left: 45%;
+    top: 90%;
+}
+
+.dot:nth-child(24) {
+    animation-delay: 23s;
+    left: 55%;
+    top: 60%;
+}
+
+.dot:nth-child(25) {
+    animation-delay: 24s;
+    left: 65%;
+    top: 50%;
+}
+
+.dot:nth-child(26) {
+    animation-delay: 25s;
+    left: 75%;
+    top: 40%;
+}
+
+.dot:nth-child(27) {
+    animation-delay: 26s;
+    left: 85%;
+    top: 30%;
+}
+
+.dot:nth-child(28) {
+    animation-delay: 27s;
+    left: 95%;
+    top: 20%;
+}
+
+.dot:nth-child(29) {
+    animation-delay: 28s;
+    left: 10%;
+    top: 10%;
+}
+
+.dot:nth-child(30) {
+    animation-delay: 29s;
+    left: 20%;
+    top: 50%;
+}
+
+.dot:nth-child(31) {
+    animation-delay: 30s;
+    left: 30%;
+    top: 30%;
+}
+
+.dot:nth-child(32) {
+    animation-delay: 31s;
+    left: 40%;
+    top: 70%;
+}
+
+.dot:nth-child(33) {
+    animation-delay: 32s;
+    left: 50%;
+    top: 80%;
+}
+
+.dot:nth-child(34) {
+    animation-delay: 33s;
+    left: 60%;
+    top: 90%;
+}
+
+.dot:nth-child(35) {
+    animation-delay: 34s;
+    left: 70%;
+    top: 80%;
+}
+
+.dot:nth-child(36) {
+    animation-delay: 35s;
+    left: 80%;
+    top: 70%;
+}
+
+/* More dots as needed... */
+
+
+
+/* More dots as needed... */
+
+/* --- Light and Dark Mode Dot Colors --- */
+
+:root {
+    --dot-color: #f7a399; /* Light mode: pink dots */
+}
+
+[data-theme="dark"] {
+    --dot-color: #ffffff; /* Dark mode: white dots */
+}
+/* Add more dots and continue the pattern */
+
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-initial); /* Themed initial shadow */
+    overflow: hidden;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.container:hover {
+    box-shadow: var(--hover-shadow); /* Use themed shadow variable on hover */
+}
+
+/* Header */
+header {
+    background: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    transition: background 0.4s ease;
+    /* Added Shine Decoration */
+    background-size: 200% 100%;
+}
+
+header h1 { 
+    font-size: 3em; 
+    margin-bottom: 10px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+    animation: popIn 0.8s ease-out 0.2s forwards;
+    opacity: 0; /* Start hidden for animation */
+}
+header p { 
+    font-size: 1.2em; 
+    animation: popIn 0.8s ease-out 0.4s forwards; 
+    opacity: 0;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--nav-bg);
+    padding: 20px;
+    gap: 15px;
+    transition: background 0.4s ease;
+    /* Added Animation */
+    animation: slideInLeft 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--nav-color);
+    background: var(--btn-bg);
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle nav button shadow */
+}
+
+/* Enhanced Nav Hover Effect */
+nav a:hover { 
+    background: var(--nav-hover); 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on lift */
+}
+
+/* Sections - Applied Slide In Left for all sections */
+section { 
+    padding: 40px 30px; 
+    border-bottom: 2px solid var(--funfact-bg); /* Themed, softer border */
+    position: relative;
+    animation: slideInLeft 0.6s ease-out forwards;
+    opacity: 0;
+}
+section:nth-child(2) { animation-delay: 1.0s; } /* Staggered effect */
+section:nth-child(3) { animation-delay: 1.2s; }
+section:nth-child(4) { animation-delay: 1.4s; }
+section:nth-child(5) { animation-delay: 1.6s; }
+
+/* Subtle Section Background change on hover */
+section:hover {
+    background: var(--funfact-bg); /* Use a light highlight color */
+}
+
+h2 { 
+    color: var(--btn-bg); 
+    margin-bottom: 20px; 
+    font-size: 2em; 
+    text-transform: uppercase; /* Decorative capitalization */
+}
+p { color: var(--text-color); margin-bottom: 20px; transition: color 0.4s ease; }
+
+/* Tables */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    border-radius: 8px; 
+    overflow: hidden; /* Ensures borders are contained */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Table Hover Effect */
+table:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+th, td { 
+    padding: 15px; 
+    border: 1px solid var(--table-border); /* Thinner border */
+    text-align: left; 
+    transition: background 0.3s ease;
+}
+
+th { background: var(--table-header-bg); color: white; }
+tr:nth-child(even) { background: var(--card-bg); } /* Use card background for better dark mode compatibility */
+
+/* Table Row Hover Effect */
+tr:hover { 
+    background: var(--funfact-bg); 
+    transform: scale(1.005); 
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Gallery */
+.gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px; }
+.gallery img { 
+    width: 250px; 
+    border-radius: 15px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+    border: 3px solid var(--btn-bg); /* Decorative border */
+}
+/* Gallery Image Hover Effect */
+.gallery img:hover { 
+    transform: scale(1.1); 
+    box-shadow: var(--hover-shadow); 
+    z-index: 10; 
+}
+
+/* Buttons */
+.btn { 
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 12px 30px; /* Slightly larger padding */
+    background: var(--btn-bg); 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 12px; 
+    transition: 0.3s; 
+    position: relative;
+    overflow: hidden; 
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Initial button shadow */
+}
+
+/* Button Shine Effect on Hover */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3), /* The shine color */
+        transparent
+    );
+    transition: 0.5s;
+    transform: skewX(-20deg);
+}
+
+.btn:hover::before {
+    left: 100%; /* Move the shine across */
+}
+
+/* Button Hover Effect: Color change, lift, and subtle shadow */
+.btn:hover { 
+    background: var(--btn-hover); 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
+/* Fun Fact */ .fun-fact { background: var(--funfact-bg); padding: 25px; /* Slightly larger padding */ border: 2px solid var(--btn-bg); /* Full border decoration */ border-radius: 15px; transition: background 0.4s ease, transform 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); } /* Fun Fact Hover Effect: Jiggle */ .fun-fact:hover { transform: rotate(-1deg) scale(1.01); /* Slight rotation and scale */ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); } .fun-fact strong { color: var(--btn-bg); } /* Footer */ footer { text-align: center; padding: 25px; background: var(--footer-bg); color: var(--text-color); /* Use text color for better contrast in dark mode */ transition: background 0.4s ease, color 0.4s ease; font-style: italic; } footer p { color: inherit; margin-bottom: 0; } /* Inherit color from footer */ /* POPUPS */ .popup { position: fixed; top:0; left:0; width:100%; height:100%; display:none; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); transition: backdrop-filter 0.4s ease; } /* Stronger blur */ .popup:target { display:flex; justify-content:center; align-items:center; z-index:1000; } .popup-content { background: var(--card-bg); padding:40px; border-radius:20px; max-width:600px; width:90%; text-align:left; max-height:90%; overflow-y:auto; opacity:0; transform: translateY(-20px); animation: popupShow 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; /* Bouncy animation */ box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); } @keyframes popupShow { to { opacity:1; transform: translateY(0); } } .popup-content img { width: 100%; max-width: 300px; height: auto; display: block; margin: 15px auto; border-radius: 10px; border: 2px solid var(--btn-bg); } /* --- CSS for Close Button (Add/Modify) --- */ .close-btn { /* All previous styles for padding, background, border-radius remain */ display:inline-block; margin-top:20px; background:var(--btn-bg); color:white; padding:10px 20px; border-radius:12px; text-decoration:none; transition:0.3s; /* NEW: Reset default button appearance */ border: none; cursor: pointer; font-size: 1em; font-family: inherit; font-weight: bold; } /* Full Gallery Popup */ .gallery-full { display:grid; grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); gap:15px; } .gallery-full img { width:100%; border-radius:12px; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 2px solid var(--btn-bg); } /* Full Gallery Image Hover Effect (similar to quick gallery) */ .gallery-full img:hover { transform: scale(1.07); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); } /* Theme Toggle Switch */ .theme-toggle { position:fixed; top:20px; right:20px; display:flex; align-items:center; gap:10px; z-index:1001; } .switch { position:relative; display:inline-block; width:50px; height:28px; } .switch input { display:none; } .slider { position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#ccc; transition:.4s; border-radius:28px; } .slider:before { position:absolute; content:""; height:22px; width:22px; left:3px; bottom:3px; background-color:white; transition:.4s; border-radius:50%; } input:checked + .slider { background-color: var(--nav-bg); } input:checked + .slider:before { transform: translateX(22px); }
+    .pop-pug {
+        text-align: left;
+        color: var(--pop-pug-text);
+    }
+
+ .box {
+    padding: 25px;
+    background: linear-gradient(270deg, #3b82f6, #8b5cf6, #ec4899,#ec4850,#ec7c48,#ecb848,#a5ec48,#48ec50,#48ecd1,#48b0ec);
+    background-size: 600% 600%;
+    animation: gradientMove 20s ease infinite;
+    border-radius: 15px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.pop-pug img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.1s ease;
+}
+
+.pop-pug img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(56, 189, 248, 0.6);
+}
+
+.pop-pug img:active {
+    transform: scale(0.95);
+}
+   
+.pop-pug button {
+    font-family: inherit;
+    font-size: 24px;        /* same visual size as Score */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 14px;
+    border: none;
+
+    background: var(--btn-bg);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+    /* Smooth animation */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+}
+.pop-pug  button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    transition: 0.5s;
+    transform: skewX(-20deg);
+}
+.pop-pug button:hover::before {
+    left: 100%;
+}
+.pop-pug button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px rgba(56, 189, 248, 0.6);
+    background: var(--btn-hover);
+}
+
+
+.pop-pug  button:active {
+    transform: translateY(-3px) scale(0.96);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+

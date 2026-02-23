@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Hobbies </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Game Script -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ===== Animated Background ===== -->
+<div class="dots">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+</div>
+
+<!-- ===== Theme Toggle ===== -->
+<div class="theme-toggle">
+    <label class="switch">
+        <input type="checkbox" id="mode-toggle">
+        <span class="slider round"></span>
+    </label>
+    <span id="mode-label">Light Mode</span>
+</div>
+
+<div class="container">
+
+    <header>
+        <h1>My Hobbys</h1>
+        <p>Basketball • Music • Chairball</p>
+    </header>
+
+    <nav>
+        <a href="#basketball-popup">Basketball</a>
+        <a href="#music-popup">Music</a>
+        <a href="#chairball-popup">Chairball</a>
+        <a href="#tools-popup">Tools</a>
+        <a href="#gallery-popup">Gallery</a>
+        <a href="#funfact-popup">Fun Facts</a>
+    </nav>
+
+    <section>
+        <h2>About My Hobbies</h2>
+        <p>
+            I enjoy basketball, music, and chairball, as these activities allow me to stay active, express my creativity, and maintain a positive and fulfilling lifestyle.
+        </p>
+    </section>
+
+    <section>
+        <h2>My Journey</h2>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Achievement</th>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>I Began actively exploring a variety of hobbies.</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>Developed advanced skills in basketball and music</tr>
+            <tr>
+                <td>2025</td>
+                <td>Refined expertise in basketball and music and achieved mastery in chairball.</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Quick Gallery</h2>
+        <div class="gallery">
+            <a href="https://www.youtube.com/watch?v=Q3BURx3gerI"></a>
+            <img src="basketball.jpeg" alt="Basketball">
+            <a href="https://www.youtube.com/watch?v=R0JKCYZ8hng"></a>
+            <img src="musci.jpg" alt="Music">
+            <a href="https://www.youtube.com/watch?v=p42HnaGJ8AU"></a>
+            <img src="bri.webp" alt="Chairball">
+        </div>
+        <a class="btn" href="#gallery-popup">View Full Gallery</a>
+    </section>
+
+    <section>
+        <h2>Equipment & Tools</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>Basketball</td>
+                <td>Basketball serves to promote physical fitness, develop teamwork and strategic skills, and provide enjoyment and personal growth.</td>
+            </tr>
+            <tr>
+                <td>Headphones/Earbuds</td>
+                <td>Enjoy music during my free time.</td>
+            </tr>
+            <tr>
+                <td>Chairball chairs</td>
+                <td>Engaged in chairball to promote teamwork and physical activity</td>
+            </tr>
+        </table>
+        <a class="btn" href="#tools-popup">More Tools Info</a>
+    </section>
+
+    <!-- ===== Tips & Fun Facts ===== -->
+    <section>
+        <h2>Tips & Fun Facts</h2>
+        <div class="fun-fact">
+            <strong>Fun Fact:</strong> Chairball improves reflexes and coordination while sitting!
+        </div>
+        <a class="btn" href="#funfact-popup">More Fun Facts</a>
+    </section>
+    <div id="basketball-popup" class="popup">
+        <div class="popup-content animate-popup">
+            <h2>Basketball</h2>
+            <p>Basketball is a fast-paced team sport played on a rectangular court where two teams, typically of five players each, compete to score points by shooting a ball through the opposing team’s hoop. The game emphasizes agility, speed, coordination, and teamwork. Players must make quick decisions, execute precise passes and shots, and maintain strong defensive and offensive strategies. Known for its dynamic pace and frequent momentum shifts, basketball combines athletic skill with strategic thinking, making it both exciting to play and watch</p>
+            
+    
+            <img src="fzmo648w78xfj8xctgne.jpg" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto;">
+    
+            <img src="33.webp" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 15px auto 0 auto;">
+            <p>I have played basketball for several years, developing teamwork, quick decision-making, and coordination. I enjoy the fast-paced nature of the game and the challenge of improving my skills.</p>
+            <br>
+    
+            <a href="#" class="close-btn">Close</a>
+        </div>
+    </div>
+    <section class="pop-pug">
+        <h2>Mini Game</h2>
+
+        <div class="box">
+            <h1>POP PUG</h1>
+            <img 
+                src="pug-with-ai-generated-free-png.webp"
+                alt="Click me"
+                class="click-img"
+                onclick="clickme()">
+        </div>
+
+        <h2>Score: <span id="score">0</span></h2>
+
+        <div class="controls">
+            <button onclick="resetGame()">Reset</button>
+        </div>
+        
+    </section>
+    <footer>
+        <p>Made with ❤️</p>
+    </footer>
+    </div>
+    
+    <!-- Music -->
+    <div id="music-popup" class="popup">
+        <div class="popup-content animate-popup">
+            <h2>Music</h2>
+            <p>Music is the art of organizing sound to create harmony, rhythm, and expression. It spans a wide range of genres, instruments, and styles, serving as a medium for emotional expression, cultural storytelling, and personal inspiration. Music can evoke deep emotions, energize, relax, or motivate, and it plays a significant role in human connection, creativity, and well-being. Whether performed, composed, or simply listened to, music enriches everyday life and inspires individuals across all ages and backgrounds.</p>
+            <img src="222.webp" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto;">
+            <img src="4.jpg" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 15px auto 0 auto;">
+            <p>Music is an ever-present, vital force in my life, constantly shifting between an energizing motivator and a source of deep emotional release. I use it to enhance focus and boost my mood, finding profound connection whether I'm listening passively or experiencing the collective thrill of a live performance.</p>
+    
+            <a href="#" class="close-btn">Close</a>
+        </div>
+    </div>
+
+    
+    <div id="chairball-popup" class="popup">
+        <div class="popup-content animate-popup">
+            <h2>Chairball</h2>
+            <p>Chairball is a non-contact court game where two teams score points by successfully passing a ball to a designated Catcher who stands stationary on a chair and holds a basket. Since players cannot run or dribble, the sport requires disciplined teamwork and accurate passing to move the ball down the court and into the target basket.</p>
+            <img src="5555.webp" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto;">
+            <img src="baba.webp" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 15px auto 0 auto;">
+            <p>Playing Chairball was a great experience defined by intense teamwork and strategic passing, where the challenge of scoring on the Catcher on the Chair demanded absolute precision. The fast-paced, cooperative nature made it a truly rewarding and engaging team sport.</p>
+    
+    
+            <a href="#" class="close-btn">Close</a>
+        </div>
+    </div>
+    
+    <!-- Tools -->
+    <div id="tools-popup" class="popup">
+        <div class="popup-content animate-popup">
+            <h2>Equipment & Tools</h2>
+            <ul>
+                <img src="k.avif" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                <li>Basketball – Practice & games</li>
+                <img src="9.jpg" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                <li>Headphones – Listen & compose music</li>
+                <img src="576765.webp" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                <li>Chairball chairs – Play chairball safely</li>
+                <img src="ruhm.jpg" style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                <li>Sportswear – Comfort & performance</li>
+            </ul>
+            <a href="#" class="close-btn">Close</a>
+        </div>
+    </div>
+    
+    <!-- Gallery -->
+    <div id="gallery-popup" class="popup">
+        <div class="popup-content gallery-popup animate-popup">
+            <h2>Photo Gallery</h2>
+    
+            <div class="gallery-full">
+    
+                <a href="https://www.youtube.com/watch?v=Q3BURx3gerI">
+                    <img src="basketball.jpeg" alt="Basketball">
+                </a>
+    
+                <a href="https://www.youtube.com/watch?v=R0JKCYZ8hng">
+                    <img src="hi.avif" alt="Music">
+                </a>
+    
+                <a href="https://www.youtube.com/watch?v=p42HnaGJ8AU">
+                    <img src="bri.webp" alt="Chairball">
+                </a>
+    
+                <a href="https://www.youtube.com/watch?v=2V0QrZMzsKo">
+                    <img src="ok.jpg" alt="Fun">
+                </a>
+    
+                <a href="https://www.youtube.com/watch?v=scpWsrM9oPY">
+                    <img src="chair-ball1.jpg" alt="Adventure">
+                </a>
+    
+                <a href="LINK_FOR_TEAMWORK">
+                    <img src="musci.jpg" alt="Teamwork">
+                </a>
+    
+            </div>
+    
+            <a href="#" class="close-btn">Close</a>
+        </div>
+    </div>
+    
+    <!-- Fun Facts -->
+    <div id="funfact-popup" class="popup">
+        <div class="popup-content animate-popup">
+            <h2>Fun Facts & Tips</h2>
+            <ul>
+                <li>Basketball was invented in 1891.</li>
+                <li>Music improves focus and creativity.</li>
+                <li>Chairball enhances coordination while seated.</li>
+                <li>Multiple hobbies keep the mind active.</li>
+                <li>Regular practice improves skill faster than long but irregular sessions.</li>
+            </ul>
+            <a href="#" class="close-btn">Close</a>
+        </div>
+    </div>
+    <!-- ===== POP PUG GAME (BELOW FUN FACTS) ===== -->
+
+
+    
+</div>
+
+<!-- ===== Theme Toggle Script ===== -->
+<script>
+const toggle = document.getElementById('mode-toggle');
+const label = document.getElementById('mode-label');
+
+toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        label.textContent = "Dark Mode";
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        label.textContent = "Light Mode";
+    }
+});
+</script>
+
+</body>
+</html>
